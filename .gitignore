@@ -1,0 +1,6 @@
+target/
+data/output/
+*.class
+.idea/
+*.iml
+README.md
