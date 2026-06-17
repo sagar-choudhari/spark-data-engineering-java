@@ -1,8 +1,8 @@
 package com.sagar.spark.jobs;
 
 import com.sagar.spark.utils.SparkSessionFactory;
-import org.apache.arrow.vector.util.Text;
 import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import java.util.Arrays;
@@ -22,8 +22,9 @@ public class WordCountDataFrameJob {
                         "spark is written in scala",
                         "java spark api is also supported"
                 ),
-                org.apache.spark.sql.Encoders.STRING()
+                Encoders.STRING()
         ).toDF("line");
+
 
         Dataset<Row> words = lines
                 .select(explode(split(col("line"), " ")).alias("word"));
@@ -39,3 +40,4 @@ public class WordCountDataFrameJob {
     }
 }
 
+        
