@@ -1,7 +1,6 @@
 package com.sagar.spark.jobs;
 
 import com.sagar.spark.SparkTestBase;
-import com.sagar.spark.utils.AppConfig;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.junit.jupiter.api.BeforeEach;

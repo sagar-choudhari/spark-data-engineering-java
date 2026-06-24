@@ -4,13 +4,7 @@ import org.apache.spark.sql.SparkSession;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
-/**
- * Base class for all Spark unit tests.
- * SparkSession is created once for the entire test class
- * and torn down after all tests complete.
- *
- * Every test class extends this — no boilerplate repeated.
- */
+
 public abstract class SparkTestBase {
 
     protected static SparkSession spark;
