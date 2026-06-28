@@ -55,7 +55,7 @@ public class WindowFunctionJob {
         WindowSpec customerDateWindow = Window
                 .partitionBy("customer_name")
                 .orderBy("order_date")
-                        .rowsBetween(Window.unboundedPreceding(), Window.currentRow());
+                .rowsBetween(Window.unboundedPreceding(), Window.currentRow());
 
         completed
                 .withColumn("running_total", sum("order_value").over(customerDateWindow))
