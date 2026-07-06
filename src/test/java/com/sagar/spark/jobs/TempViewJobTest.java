@@ -16,13 +16,13 @@ class TempViewJobTest extends SparkTestBase {
         spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/orders_v2.csv")
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/orders_v2.csv")
                 .createOrReplaceTempView("orders_session");
 
         spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/orders_v2.csv")
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/orders_v2.csv")
                 .createOrReplaceGlobalTempView("orders_global");
     }
 

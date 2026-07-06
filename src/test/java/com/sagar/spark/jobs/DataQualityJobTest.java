@@ -32,7 +32,7 @@ class DataQualityJobTest extends SparkTestBase {
                 .option("header", "true")
                 .option("mode", "PERMISSIVE")
                 .schema(schema)
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/orders_dirty.csv");
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/orders_dirty.csv");
     }
 
     @Test
@@ -78,7 +78,7 @@ class DataQualityJobTest extends SparkTestBase {
         Dataset<Row> customers = spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/customers.csv");
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/customers.csv");
 
         Dataset<Row> orphaned = raw
                 .join(customers,

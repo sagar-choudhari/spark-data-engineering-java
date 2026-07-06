@@ -20,12 +20,12 @@ class JoinJobTest extends SparkTestBase {
         orders = spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/orders_v2.csv");
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/orders_v2.csv");
 
         customers = spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/customers.csv");
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/customers.csv");
     }
 
     @Test
@@ -52,6 +52,25 @@ class JoinJobTest extends SparkTestBase {
         // left join must never drop order rows
         assertEquals(orders.count(), left.count(),
                 "Left join must retain all orders regardless of customer match");
+    }
+
+    @Test
+    @DisplayName("Broadcast join produces same result as regular inner join")
+    void testBroadcastJoinConsistency() {
+        Dataset<Row> regularJoin = orders.join(
+                customers,
+                orders.col("customer_id").equalTo(customers.col("customer_id")),
+                "inner"
+        );
+
+        Dataset<Row> broadcastJoin = orders.join(
+                broadcast(customers),
+                orders.col("customer_id").equalTo(customers.col("customer_id")),
+                "inner"
+        );
+
+        assertEquals(regularJoin.count(), broadcastJoin.count(),
+                "Broadcast join must produce same row count as regular inner join");
     }
 
     @Test
