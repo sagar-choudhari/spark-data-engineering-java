@@ -1,0 +1,9 @@
+target/
+data/output/
+*.class
+.idea/
+*.iml
+README.md
+spark-warehouse
+derby.log
+metastore_db
