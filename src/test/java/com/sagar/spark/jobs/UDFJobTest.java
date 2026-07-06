@@ -48,7 +48,7 @@ class UDFJobTest extends SparkTestBase {
         orders = spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/orders_v3.csv")
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/orders_v3.csv")
                 .withColumn("order_value",
                         col("quantity").multiply(
                                 col("price").cast(DataTypes.DoubleType)));

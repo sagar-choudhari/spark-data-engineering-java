@@ -19,7 +19,7 @@ class CsvIngestJobTest extends SparkTestBase {
         orders = spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/dataFiles/csv/input/orders.csv");
+                .csv("C:/Users/sgrch/Desktop/central-learning/data-engineering/data-file/csv/input/orders.csv");
     }
 
     @Test

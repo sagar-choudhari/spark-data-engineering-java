@@ -52,6 +52,21 @@ public class JoinJob {
                 orders.col("status")
         ).show();
 
+        System.out.println("========================== BROADCAST-JOIN ==========================");
+        Dataset<Row> broadcastJoin = orders.join(
+                broadcast(customers),
+                orders.col("customer_id").equalTo(customers.col("customer_id")),
+                "inner"
+        );
+
+        broadcastJoin.select(
+                orders.col("order_id"),
+                customers.col("customer_name"),
+                customers.col("tier"),
+                orders.col("product"),
+                orders.col("status")
+        ).show();
+
         System.out.println("========================== ENRICHED-ORDERS ==========================");
         Dataset<Row> enriched = orders.join(customers, orders.col("customer_id").equalTo(customers.col("customer_id")), "inner")
                         .withColumn("order_value", col("quantity").multiply(col("price")))
