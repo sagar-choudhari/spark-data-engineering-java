@@ -4,3 +4,6 @@ data/output/
 .idea/
 *.iml
 README.md
+spark-warehouse
+derby.log
+metastore_db
