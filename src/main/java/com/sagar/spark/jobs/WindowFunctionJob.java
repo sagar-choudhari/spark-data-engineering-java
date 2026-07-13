@@ -10,7 +10,7 @@ import org.apache.spark.sql.expressions.WindowSpec;
 
 import static org.apache.spark.sql.functions.*;
 public class WindowFunctionJob {
-    private static final String PARQUET_PATH_ENRICHED_ORDERS = AppConfig.get("parquet.path.enriched.orders");
+    private static final String PARQUET_PATH_ENRICHED_ORDERS = AppConfig.getFilePath("parquet.path.enriched.orders");
 
     public static void main(String[] args) {
 

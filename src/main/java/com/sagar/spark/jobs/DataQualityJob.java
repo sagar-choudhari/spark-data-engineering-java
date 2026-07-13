@@ -18,10 +18,10 @@ import static org.apache.spark.sql.functions.*;
 public class DataQualityJob {
 
     private static final List<String> VALID_STATUS = new ArrayList<>(List.of(new String[]{"COMPLETED", "PENDING", "CANCELLED"}));
-    private static final String CSV_PATH_ORDERS_DIRTY = AppConfig.get("csv.path.orders_dirty");
-    private static final String CSV_PATH_CUSTOMERS = AppConfig.get("csv.path.customers");
-    private static final String PARQUET_PATH_CLEAN_ORDERS = AppConfig.get("parquet.path.clean.orders");
-    private static final String PARQUET_PATH_QUARANTINE_ORDERS = AppConfig.get("parquet.path.quarantine.orders");
+    private static final String CSV_PATH_ORDERS_DIRTY = AppConfig.getFilePath("csv.path.orders_dirty");
+    private static final String CSV_PATH_CUSTOMERS = AppConfig.getFilePath("csv.path.customers");
+    private static final String PARQUET_PATH_CLEAN_ORDERS = AppConfig.getFilePath("parquet.path.clean.orders");
+    private static final String PARQUET_PATH_QUARANTINE_ORDERS = AppConfig.getFilePath("parquet.path.quarantine.orders");
 
     public static void main(String[] args) {
 

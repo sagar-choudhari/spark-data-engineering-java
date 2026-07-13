@@ -15,13 +15,13 @@ import org.apache.spark.sql.types.StructType;
 import static org.apache.spark.sql.functions.*;
 public class EndToEndPipelineJob {
 
-    private static final String CSV_PATH_ORDERS_DIRTY = AppConfig.get("csv.path.orders_dirty_v2");
-    private static final String JSON_PATH_TRANSACTIONS = AppConfig.get("json.path.transactions_v2");
+    private static final String CSV_PATH_ORDERS_DIRTY = AppConfig.getFilePath("csv.path.orders_dirty_v2");
+    private static final String JSON_PATH_TRANSACTIONS = AppConfig.getFilePath("json.path.transactions_v2");
     private static final String[] PAYMENT_STATUS = {"COMPLETED", "PENDING", "CANCELLED"};
 
-    private static final String PARQUET_PATH_QUARANTINE_ORDERS = AppConfig.get("parquet.path.quarantine.orders");
-    private static final String PARQUET_PATH_CORRELATED_ORDERS = AppConfig.get("parquet.path.quarantine.correlated_orders");
-    private static final String PARQUET_PATH_REVENUE_REPORT = AppConfig.get("parquet.path.quarantine.revenue_report");
+    private static final String PARQUET_PATH_QUARANTINE_ORDERS = AppConfig.getFilePath("parquet.path.quarantine.orders");
+    private static final String PARQUET_PATH_CORRELATED_ORDERS = AppConfig.getFilePath("parquet.path.quarantine.correlated_orders");
+    private static final String PARQUET_PATH_REVENUE_REPORT = AppConfig.getFilePath("parquet.path.quarantine.revenue_report");
 
     public static void main(String[] args) {
 

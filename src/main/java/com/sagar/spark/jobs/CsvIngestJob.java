@@ -10,7 +10,7 @@ import static org.apache.spark.sql.functions.*;
 
 public class CsvIngestJob {
 
-    private static final String CSV_PATH_ORDERS = AppConfig.get("csv.path.orders");
+    private static final String CSV_PATH_ORDERS = AppConfig.getFilePath("csv.path.orders");
 
     public static void main(String[] args) {
 

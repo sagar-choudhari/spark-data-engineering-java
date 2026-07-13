@@ -10,9 +10,9 @@ import org.apache.spark.sql.Dataset;
 import static org.apache.spark.sql.functions.*;
 
 public class JoinJob {
-    private static final String CSV_PATH_CUSTOMERS= AppConfig.get("csv.path.customers");
-    private static final String CSV_PATH_ORDERS_V2= AppConfig.get("csv.path.orders_v2");
-    private static final String PARQUET_PATH_ENRICHED_ORDERS= AppConfig.get("parquet.path.enriched.orders");
+    private static final String CSV_PATH_CUSTOMERS= AppConfig.getFilePath("csv.path.customers");
+    private static final String CSV_PATH_ORDERS_V2= AppConfig.getFilePath("csv.path.orders_v2");
+    private static final String PARQUET_PATH_ENRICHED_ORDERS= AppConfig.getFilePath("parquet.path.enriched.orders");
 
 
     public static void main(String[] args) {

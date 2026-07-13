@@ -12,7 +12,7 @@ import static org.apache.spark.sql.functions.*;
 
 public class UDFJob {
 
-    public static final String CSV_PATH_ORDERS_V3 = AppConfig.get("csv.path.orders_v3");
+    public static final String CSV_PATH_ORDERS_V3 = AppConfig.getFilePath("csv.path.orders_v3");
 
     public static void main(String[] args) {
         SparkSession spark = SparkSessionFactory.get();

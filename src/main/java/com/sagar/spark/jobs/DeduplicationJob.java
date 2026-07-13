@@ -15,9 +15,9 @@ import static org.apache.spark.sql.functions.*;
 
 public class DeduplicationJob {
 
-    private static final String CSV_PATH_ORDERS_DUPES = AppConfig.get("csv.path.orders_dupes");
-    private static final String PARQUET_PATH_ORDERS_DUPES = AppConfig.get("parquet.path.orders_dupes-removed");
-    private static final String CSV_PATH_CUSTOMERS_CURRENT = AppConfig.get("csv.path.customers_current");
+    private static final String CSV_PATH_ORDERS_DUPES = AppConfig.getFilePath("csv.path.orders_dupes");
+    private static final String PARQUET_PATH_ORDERS_DUPES = AppConfig.getFilePath("parquet.path.orders_dupes-removed");
+    private static final String CSV_PATH_CUSTOMERS_CURRENT = AppConfig.getFilePath("csv.path.customers_current");
 
     public static void main(String[] args) {
 
