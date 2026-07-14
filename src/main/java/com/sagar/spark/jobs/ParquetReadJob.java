@@ -11,8 +11,8 @@ import java.util.Arrays;
 
 import static org.apache.spark.sql.functions.*;
 public class ParquetReadJob {
-    private static final String PARQUET_PATH_ORDERS = AppConfig.get("parquet.path.orders");
-    private static final String PARQUET_PATH_PARTITIONED_ORDERS = AppConfig.get("parquet.path.partitioned.orders");
+    private static final String PARQUET_PATH_ORDERS = AppConfig.getFilePath("parquet.path.orders");
+    private static final String PARQUET_PATH_PARTITIONED_ORDERS = AppConfig.getFilePath("parquet.path.partitioned.orders");
 
     public static void main(String[] args) {
         SparkSession sparkSession = SparkSessionFactory.get();

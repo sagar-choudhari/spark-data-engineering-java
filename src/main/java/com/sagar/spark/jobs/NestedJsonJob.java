@@ -11,8 +11,8 @@ import static org.apache.spark.sql.functions.*;
 
 public class NestedJsonJob {
 
-    private static final String JSON_PATH_TRANSACTIONS = AppConfig.get("json.path.transactions");
-    private static final String PARQUET_PATH_TRANSACTIONS = AppConfig.get("parquet.path.transactions");
+    private static final String JSON_PATH_TRANSACTIONS = AppConfig.getFilePath("json.path.transactions");
+    private static final String PARQUET_PATH_TRANSACTIONS = AppConfig.getFilePath("parquet.path.transactions");
 
     public static void main(String[] args) {
 

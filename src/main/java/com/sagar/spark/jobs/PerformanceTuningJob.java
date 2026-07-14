@@ -2,7 +2,6 @@ package com.sagar.spark.jobs;
 
 import com.sagar.spark.utils.AppConfig;
 import com.sagar.spark.utils.SparkSessionFactory;
-import org.apache.spark.internal.config.R;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
@@ -12,8 +11,8 @@ import org.apache.spark.storage.StorageLevel;
 import static org.apache.spark.sql.functions.*;
 
 public class PerformanceTuningJob {
-    private static final String CSV_PATH_LARGE_ORDERS = AppConfig.get("csv.path.large_orders");
-    private static final String PARQUET_PATH_LARGE_ORDERS = AppConfig.get("parquet.path.large_orders");
+    private static final String CSV_PATH_LARGE_ORDERS = AppConfig.getFilePath("csv.path.large_orders");
+    private static final String PARQUET_PATH_LARGE_ORDERS = AppConfig.getFilePath("parquet.path.large_orders");
 
     public static void main(String[] args) {
 

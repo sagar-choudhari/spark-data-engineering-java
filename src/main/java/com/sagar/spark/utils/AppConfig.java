@@ -18,7 +18,7 @@ public class AppConfig {
         }
     }
 
-    public static String get(String key){
+    public static String getFilePath(String key){
         return props.getProperty(key);
     }
 }
