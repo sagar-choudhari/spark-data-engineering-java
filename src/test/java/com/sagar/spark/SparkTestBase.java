@@ -16,6 +16,10 @@ public abstract class SparkTestBase {
                 .master("local[2]")   // 2 cores — enough for tests, faster than local[*]
                 .config("spark.sql.shuffle.partitions", "2")  // keep tests fast
                 .config("spark.ui.enabled", "false")          // no Spark UI during tests
+                .config("spark.sql.extensions",
+                        "io.delta.sql.DeltaSparkSessionExtension")
+                .config("spark.sql.catalog.spark_catalog",
+                        "org.apache.spark.sql.delta.catalog.DeltaCatalog")
                 .getOrCreate();
     }
 
