@@ -13,8 +13,8 @@ import org.apache.spark.sql.expressions.WindowSpec;
 import static org.apache.spark.sql.functions.*;
 public class ExerciseTwo {
 
-    private static final String CSV_PATH_ORDERS = AppConfig.get("csv.path.orders_v2");
-    private static final String CSV_PATH_CUSTOMERS = AppConfig.get("csv.path.customers");
+    private static final String CSV_PATH_ORDERS = AppConfig.getFilePath("csv.path.orders_v2");
+    private static final String CSV_PATH_CUSTOMERS = AppConfig.getFilePath("csv.path.customers");
 
     public static void main(String[] args) {
         SparkSession spark = SparkSessionFactory.get();

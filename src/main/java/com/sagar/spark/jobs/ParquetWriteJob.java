@@ -11,9 +11,9 @@ import static org.apache.spark.sql.functions.*;
 
 public class ParquetWriteJob {
 
-    private static final String CSV_PATH_ORDERS = AppConfig.get("csv.path.orders");
-    private static final String PARQUET_PATH_ORDERS = AppConfig.get("parquet.path.orders");
-    private static final String PARQUET_PATH_PARTITIONED_ORDERS = AppConfig.get("parquet.path.partitioned.orders");
+    private static final String CSV_PATH_ORDERS = AppConfig.getFilePath("csv.path.orders");
+    private static final String PARQUET_PATH_ORDERS = AppConfig.getFilePath("parquet.path.orders");
+    private static final String PARQUET_PATH_PARTITIONED_ORDERS = AppConfig.getFilePath("parquet.path.partitioned.orders");
 
     public static void main(String[] args) {
         System.setProperty("hadoop.home.dir", "C:/hadoop");

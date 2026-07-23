@@ -9,7 +9,7 @@ import org.apache.spark.sql.SparkSession;
 
 public class TempViewJob {
 
-    private static final String CSV_PATH_ORDERS = AppConfig.get("csv.path.orders_v2");
+    private static final String CSV_PATH_ORDERS = AppConfig.getFilePath("csv.path.orders_v2");
 
     public static void main(String[] args) throws AnalysisException {
 

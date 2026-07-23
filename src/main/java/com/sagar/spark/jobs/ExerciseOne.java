@@ -29,7 +29,7 @@ public class ExerciseOne {
 
         StructType orders_schema = DataTypes.createStructType(structFields);
 
-        Dataset<Row> ordersCsvData = spark.read().option("header", "true").option("inferSchema", "false").schema(orders_schema).csv(AppConfig.get("csv.path.orders"));
+        Dataset<Row> ordersCsvData = spark.read().option("header", "true").option("inferSchema", "false").schema(orders_schema).csv(AppConfig.getFilePath("csv.path.orders"));
 
         System.out.println("################# SCHEMA-DEFINED-EXPLICITLY ########################");
         ordersCsvData.printSchema();

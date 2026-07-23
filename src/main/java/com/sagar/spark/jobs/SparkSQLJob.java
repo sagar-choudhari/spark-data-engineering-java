@@ -8,8 +8,8 @@ import org.apache.spark.sql.SparkSession;
 
 public class SparkSQLJob {
 
-    private static final String CSV_PATH_ORDERS = AppConfig.get("csv.path.orders_v2");
-    private static final String CSV_PATH_CUSTOMERS = AppConfig.get("csv.path.customers");
+    private static final String CSV_PATH_ORDERS = AppConfig.getFilePath("csv.path.orders_v2");
+    private static final String CSV_PATH_CUSTOMERS = AppConfig.getFilePath("csv.path.customers");
 
     public static void main(String[] args) {
 
