@@ -16,6 +16,16 @@ public class SparkSessionFactory {
                             "io.delta.sql.DeltaSparkSessionExtension")
                     .config("spark.sql.catalog.spark_catalog",
                             "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+                    // S3A configuration
+                    .config("spark.hadoop.fs.s3a.impl",
+                            "org.apache.hadoop.fs.s3a.S3AFileSystem")
+                    .config("spark.hadoop.fs.s3a.aws.credentials.provider",
+                            "com.amazonaws.auth.DefaultAWSCredentialsProviderChain")
+                    .config("spark.hadoop.fs.s3a.endpoint",
+                            "s3.amazonaws.com")
+                    // performance tuning for S3
+                    .config("spark.hadoop.fs.s3a.multipart.size", "104857600")
+                    .config("spark.hadoop.fs.s3a.fast.upload", "true")
                     .getOrCreate();
         }
         return instance;
